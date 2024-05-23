@@ -1,3 +1,15 @@
+html, body {
+  height: 100vh;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(0 0% 85%);
+}
+
 button {
     --a: green; 
     --s: .8rem; /*arrow size */
