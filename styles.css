@@ -1,0 +1,38 @@
+button {
+    --a: green; 
+    --s: .8rem; /*arrow size */
+    --n: calc(8*var(--s)); /* update the 8 to control the number of visible arrows */
+
+    --cm: color-mix(in srgb,var(--a),#000 40%);
+    --gr: 0 var(--s),#0000 0 calc(2*var(--s));
+
+    background: 
+      conic-gradient(from 225deg at calc(100% - var(--n)) 50%,
+      var(--cm) 45deg,var(--a) 0 25%,#0000 0),
+      repeating-linear-gradient(135deg,var(--cm) var(--gr))
+      0 100%/200% 50.1% no-repeat,
+      repeating-linear-gradient( 45deg,var(--a)  var(--gr))
+      0 0   /200% 50.1% no-repeat;
+    clip-path: polygon(0 0,calc(100% - .5lh) 0,100% 50%,calc(100% - .5lh) 100%,0 100%);
+    line-height: 2;
+    padding-inline: 2rem calc(2rem + var(--n));
+    filter: drop-shadow(4px 4px 4px hsl(0 0% 0% / .5));
+    font-size: 2rem;
+    color: white;
+    border-radius: 999px 0 0 999px;
+    border: none;
+    cursor: pointer;
+    animation: bttn 1s linear infinite;
+}
+
+  
+@keyframes bttn {
+  to {
+    background-position: 0 0,calc(2*sqrt(2)*var(--s)) 100%,calc(2*sqrt(2)*var(--s)) 0;
+  }
+}
+ 
+button:hover {
+    animation-play-state: paused;
+}
+  
